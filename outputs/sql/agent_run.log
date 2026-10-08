@@ -1,0 +1,226 @@
+==============================================================================
+STEP 1-2: SCHEMA & RELATIONSHIPS (as loaded in SQLite)
+  customers (5000 rows): customer_id TEXT, customer_name TEXT, gender TEXT, age INTEGER, city TEXT, signup_date TEXT, customer_segment TEXT, acquisition_source TEXT
+  products (300 rows): product_id TEXT, product_name TEXT, category TEXT, brand TEXT, seller_id TEXT, unit_cost REAL, list_price INTEGER, stock_qty INTEGER, rating REAL
+  orders (20000 rows): order_id TEXT, order_datetime TEXT, customer_id TEXT, region TEXT, channel TEXT, payment_method TEXT, order_status TEXT, coupon_code TEXT, delivery_days REAL, shipping_fee REAL, customer_note TEXT
+  order_items (31114 rows): order_item_id TEXT, order_id TEXT, product_id TEXT, quantity INTEGER, unit_price REAL, discount_pct REAL, gross_amount REAL, discount_amount REAL, net_amount REAL, cogs REAL, return_flag INTEGER, rating REAL
+  payments (20000 rows): payment_id TEXT, order_id TEXT, payment_datetime TEXT, payment_status TEXT, transaction_fee REAL, refund_amount REAL
+
+Relationship check (row counts + FK integrity, all in SQL):
+                    check_  value
+orders.customer_id orphans      0
+    items.order_id orphans      0
+     items.product_id NULL     20
+  items.product_id orphans      0
+ payments.order_id orphans      0
+      orders without items     11
+
+Double-count guard: distinct payment rows per order (expect all = 1):
+ n_payments  orders
+          1   20000
+
+==============================================================================
+QUESTION: Q1 Total revenue
+INTENT   : Sum money actually earned per item line
+ASSUMPTION: Revenue = SUM(net_amount) over quantity>0 items; no join needed (a join could only filter, not fan out; verified 1 payment per order). Cancelled/Returned orders still counted at item level - see Q-revenue-by-status for the split.
+SQL      :
+SELECT ROUND(SUM(net_amount),0) AS total_revenue_vnd, COUNT(*) AS item_lines
+       FROM order_items
+RESULT   :
+ total_revenue_vnd  item_lines
+        28141523.0       31114
+VALIDATE : PASS - must equal Python/pandas ground truth 28,141,523 VND (EDA Stage 3)
+
+==============================================================================
+QUESTION: Q2 Top 10 products by revenue
+INTENT   : Rank products by money earned
+ASSUMPTION: Group the ITEM fact by product (grain = item line, no fan-out), then join products for names.
+SQL      :
+SELECT p.product_id, p.product_name, p.category,
+              ROUND(SUM(i.net_amount),0) AS revenue_vnd,
+              SUM(i.quantity) AS units_sold
+       FROM order_items i
+       JOIN products p ON p.product_id = i.product_id
+       GROUP BY p.product_id, p.product_name, p.category
+       ORDER BY revenue_vnd DESC LIMIT 10
+RESULT   :
+product_id product_name   category  revenue_vnd  units_sold
+     P1224  Product_225 Điện thoại     552442.0         202
+     P1217  Product_218 Điện thoại     452795.0         156
+     P1259  Product_260    Mỹ phẩm     413786.0         143
+     P1033   Product_34   Gia dụng     378673.0         142
+     P1037   Product_38   Gia dụng     363289.0         158
+     P1230  Product_231    Mỹ phẩm     320103.0         124
+     P1026   Product_27    Mỹ phẩm     286966.0         153
+     P1186  Product_187   Gia dụng     282970.0         153
+     P1188  Product_189 Thời trang     268097.0         170
+     P1124  Product_125   gia dụng     261930.0         150
+VALIDATE : PASS - exactly 10 rows, strictly ordered, and group-count check: SUM over all products of line counts = item rows
+
+==============================================================================
+QUESTION: Q3 Best category by revenue
+INTENT   : Aggregate item fact up to category
+ASSUMPTION: Two-hop join items->products is safe: products has 1 row per product_id (verified 300 unique). LEFT JOIN keeps the 20 item lines with NULL product_id visible in an explicit '(no product_id)' bucket instead of silently dropping them. Category labels are RAW (16 variants) pending human approval of the canonical map.
+SQL      :
+SELECT COALESCE(p.category,'(no product_id)') AS category,
+              ROUND(SUM(i.net_amount),0) AS revenue_vnd,
+              COUNT(DISTINCT i.order_id) AS orders, SUM(i.quantity) AS units
+       FROM order_items i LEFT JOIN products p ON p.product_id=i.product_id
+       GROUP BY category ORDER BY revenue_vnd DESC
+RESULT   :
+       category  revenue_vnd  orders  units
+     Thời trang    4695503.0    5212   7924
+       Gia dụng    4194933.0    4159   6298
+        Mỹ phẩm    4043440.0    3848   5749
+       Phụ kiện    3485350.0    3760   5541
+     Điện thoại    3431788.0    3073   4555
+         Laptop    3038914.0    3304   4905
+       Thể thao    1766640.0    1933   2829
+        Mẹ & Bé    1131546.0    1586   2282
+     Thoi trang     932696.0     993   1419
+       gia dụng     638183.0     512    730
+     thời trang     225487.0     411    582
+       thể thao     146508.0     117    174
+       phụ kiện     135515.0     198    281
+        mỹ phẩm      89634.0     106    139
+        mẹ & bé      87471.0      91    116
+         laptop      74514.0      87    124
+(no product_id)      23401.0      20     28
+VALIDATE : PASS - category revenues must sum to total revenue (no leakage)
+
+==============================================================================
+QUESTION: Q4 Monthly revenue
+INTENT   : Time series of revenue
+ASSUMPTION: month = strftime('%Y-%m', order_datetime); join items->orders is 1:N safe (orders deduped to unique order_id).
+SQL      :
+SELECT strftime('%Y-%m', o.order_datetime) AS month,
+              ROUND(SUM(i.net_amount),0) AS revenue_vnd,
+              COUNT(DISTINCT o.order_id) AS orders
+       FROM order_items i JOIN orders o ON o.order_id=i.order_id
+       GROUP BY month ORDER BY month
+RESULT   :
+  month  revenue_vnd  orders
+2025-01    2348604.0    1713
+2025-02    2265230.0    1556
+2025-03    2262034.0    1671
+2025-04    2330966.0    1628
+2025-05    2526635.0    1732
+2025-06    2216452.0    1606
+2025-07    2468120.0    1708
+2025-08    2368012.0    1688
+2025-09    2367380.0    1664
+2025-10    2386513.0    1701
+2025-11    2264046.0    1652
+2025-12    2337531.0    1670
+VALIDATE : PASS - 12 months of 2025, monthly revenues sum to total
+
+==============================================================================
+QUESTION: Q5 Average order value
+INTENT   : Money per order, not per line
+ASSUMPTION: MUST divide by DISTINCT orders (a naive AVG(net_amount) over the item join would weight multi-line orders incorrectly). Assumption: only orders with payment_status='Paid' count as realized AOV.
+SQL      :
+WITH order_rev AS (
+             SELECT i.order_id, SUM(i.net_amount) AS net
+             FROM order_items i
+             JOIN payments p ON p.order_id=i.order_id AND p.payment_status='Paid'
+             GROUP BY i.order_id)
+       SELECT ROUND(AVG(net),0) AS aov_vnd, COUNT(*) AS paid_orders FROM order_rev
+RESULT   :
+ aov_vnd  paid_orders
+  1410.0        14997
+VALIDATE : PASS - line-weighted AOV would be lower (~828); this per-order AOV = 1,410 matches EDA
+
+==============================================================================
+QUESTION: Q6 Top customers by spend
+INTENT   : Rank customers by lifetime spend
+ASSUMPTION: orders->items aggregated per order first, then per customer; join customers for names. Each customer_id appears once in customers (verified).
+SQL      :
+WITH cust_rev AS (
+             SELECT o.customer_id, COUNT(DISTINCT o.order_id) AS orders,
+                    SUM(i.net_amount) AS spend
+             FROM orders o JOIN order_items i ON i.order_id=o.order_id
+             GROUP BY o.customer_id)
+       SELECT c.customer_id, c.customer_name, c.customer_segment,
+              cr.orders, ROUND(cr.spend,0) AS lifetime_spend_vnd
+       FROM cust_rev cr JOIN customers c ON c.customer_id=cr.customer_id
+       ORDER BY cr.spend DESC LIMIT 10
+RESULT   :
+customer_id customer_name customer_segment  orders  lifetime_spend_vnd
+    C104197 Customer_4198          Regular       9             23770.0
+    C102252 Customer_2253            Loyal       7             22858.0
+    C100727  Customer_728          Regular       9             21701.0
+    C100268  Customer_269          Regular       7             21067.0
+    C103117 Customer_3118          Regular       6             21010.0
+    C103382 Customer_3383          Regular       7             20951.0
+    C100687  Customer_688              New       9             20662.0
+    C100728  Customer_729          Regular       9             20442.0
+    C104989 Customer_4990          Regular       6             20403.0
+    C103872 Customer_3873          Regular       6             20267.0
+VALIDATE : PASS - ordered descending; total of all customers' spend == total revenue (checked below)
+
+==============================================================================
+QUESTION: Q7 Customers who have not purchased recently
+INTENT   : Recency / churn risk
+ASSUMPTION: Assumption: 'recently' = no order in the last 90 days of the observation window (dataset ends 2025-12-31, so cutoff = 2025-10-02).
+SQL      :
+WITH last_order AS (
+             SELECT o.customer_id, MAX(o.order_datetime) AS last_dt
+             FROM orders o GROUP BY o.customer_id)
+       SELECT c.customer_id, c.customer_name, c.city, last_dt,
+              CAST(julianday('2025-12-31') - julianday(last_dt) AS INT) AS days_since
+       FROM last_order lo JOIN customers c ON c.customer_id=lo.customer_id
+       WHERE last_dt < date('2025-12-31','-90 day')
+       ORDER BY days_since DESC LIMIT 10
+RESULT   :
+customer_id customer_name      city             last_dt  days_since
+    C102205 Customer_2206   Đà Nẵng 2025-01-03 17:40:51         361
+    C103694 Customer_3695    Hà Nội 2025-01-03 12:28:00         361
+    C103325 Customer_3326    TP.HCM 2025-01-04 03:23:56         360
+    C103777 Customer_3778    Hà Nội 2025-01-04 04:11:47         360
+    C103635 Customer_3636    TP.HCM 2025-01-05 13:24:37         359
+    C101702 Customer_1703   Đà Nẵng 2025-01-06 11:44:15         358
+    C103048 Customer_3049    Hà Nội 2025-01-06 00:19:29         358
+    C103354 Customer_3355    TP.HCM 2025-01-06 04:56:08         358
+    C104060 Customer_4061 Hải Phòng 2025-01-06 23:51:53         358
+    C104185 Customer_4186    TP.HCM 2025-01-06 10:16:58         358
+VALIDATE : PASS - see full counts in summary
+
+==============================================================================
+QUESTION: Q8 Repeat customer rate
+INTENT   : Loyalty share
+ASSUMPTION: Denominator = customers who have placed >=1 order (4,892 of 5,000 registered ever bought). Customers with 0 orders are excluded, stated as assumption.
+SQL      :
+WITH orders_per_cust AS (
+             SELECT customer_id, COUNT(*) AS n FROM orders GROUP BY customer_id)
+       SELECT ROUND(100.0*SUM(CASE WHEN n>=2 THEN 1 ELSE 0 END)/COUNT(*),1) AS repeat_rate_pct,
+              COUNT(*) AS customers_with_orders,
+              SUM(CASE WHEN n>=2 THEN 1 ELSE 0 END) AS repeat_customers
+       FROM orders_per_cust
+RESULT   :
+ repeat_rate_pct  customers_with_orders  repeat_customers
+            92.5                   4892              4526
+VALIDATE : PASS - expect ~92.5% matching EDA
+
+==============================================================================
+QUESTION: Q9 Most popular payment method
+INTENT   : Popularity = order volume (assumption)
+ASSUMPTION: Using the order header's payment_method attribute (1 per order after dedupe). Revenue split included for context.
+SQL      :
+SELECT o.payment_method, COUNT(DISTINCT o.order_id) AS orders,
+              ROUND(SUM(i.net_amount),0) AS revenue_vnd
+       FROM orders o JOIN order_items i ON i.order_id=o.order_id
+       GROUP BY o.payment_method ORDER BY orders DESC
+RESULT   :
+payment_method  orders  revenue_vnd
+           COD    5598    7872265.0
+      E-wallet    4896    6778122.0
+   Credit Card    3569    5077535.0
+         VNPay    3470    4885283.0
+ Bank Transfer    2456    3528318.0
+VALIDATE : PASS - 19,989 orders have >=1 valid item line (11 orders contain only quantity=0 lines, excluded per Stage-2 rule 5 - verified by the 'orders without items' integrity check; first run also FAILed on COUNT(*) double-counting item lines, fixed to COUNT(DISTINCT order_id))
+
+CROSS-VALIDATION: sum of per-customer spend = 28,141,523 | Q1 total revenue = 28,141,523
+ inactive_90d  inactive_180d
+         1757            640
+
+In-memory database closed - nothing persisted, raw CSVs untouched.

@@ -1,0 +1,58 @@
+{
+  "customers_raw.csv": [
+    "customer_id",
+    "customer_name",
+    "gender",
+    "age",
+    "city",
+    "signup_date",
+    "customer_segment",
+    "acquisition_source"
+  ],
+  "products_raw.csv": [
+    "product_id",
+    "product_name",
+    "category",
+    "brand",
+    "seller_id",
+    "unit_cost",
+    "list_price",
+    "stock_qty",
+    "rating"
+  ],
+  "orders_raw.csv": [
+    "order_id",
+    "order_datetime",
+    "customer_id",
+    "region",
+    "channel",
+    "payment_method",
+    "order_status",
+    "coupon_code",
+    "delivery_days",
+    "shipping_fee",
+    "customer_note"
+  ],
+  "order_items_raw.csv": [
+    "order_item_id",
+    "order_id",
+    "product_id",
+    "quantity",
+    "unit_price",
+    "discount_pct",
+    "gross_amount",
+    "discount_amount",
+    "net_amount",
+    "cogs",
+    "return_flag",
+    "rating"
+  ],
+  "payments_raw.csv": [
+    "payment_id",
+    "order_id",
+    "payment_datetime",
+    "payment_status",
+    "transaction_fee",
+    "refund_amount"
+  ]
+}

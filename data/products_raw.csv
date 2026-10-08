@@ -1,0 +1,301 @@
+﻿product_id,product_name,category,brand,seller_id,unit_cost,list_price,stock_qty,rating
+P1000,Product_1,Thời trang,Generic,S120,975.0,1219,167,4.3
+P1001,Product_2,Điện thoại,Brand_D,S130,331.0,414,24,4.5
+P1002,Product_3,Phụ kiện,Brand_C,S109,169.0,211,130,3.3
+P1003,Product_4,Phụ kiện,Brand_B,S118,97.0,214,80,4.0
+P1004,Product_5,Gia dụng,Brand_D,S101,126.0,1306,155,5.0
+P1005,Product_6,gia dụng,Generic,S129,113.0,227,0,4.0
+P1006,Product_7,Gia dụng,Brand_A,S112,208.0,508,37,4.2
+P1007,Product_8,Laptop,Brand_C,S103,91.0,445,48,4.0
+P1008,Product_9,Mẹ & Bé,Generic,S131,547.0,684,111,4.9
+P1009,Product_10,Phụ kiện,Brand_C,S109,239.0,400,194,4.1
+P1010,Product_11,Thời trang,Brand_A,S108,233.0,823,179,3.6
+P1011,Product_12,Điện thoại,Brand_A,S105,98.0,504,91,5.0
+P1012,Product_13,Laptop,Brand_E,S124,129.0,328,0,3.5
+P1013,Product_14,Phụ kiện,Brand_E,S113,47.0,509,173,4.2
+P1014,Product_15,Laptop,Brand_A,S122,687.0,859,114,3.8
+P1015,Product_16,Gia dụng,Brand_B,S113,82.0,671,4,3.8
+P1016,Product_17,Mẹ & Bé,Brand_D,S130,87.0,317,129,3.7
+P1017,Product_18,Mỹ phẩm,Brand_E,S114,595.0,744,176,3.9
+P1018,Product_19,Phụ kiện,Brand_A,S131,290.0,688,174,4.7
+P1019,Product_20,Điện thoại,Brand_C,S118,241.0,378,177,3.2
+P1020,Product_21,Gia dụng,Brand_D,S100,281.0,392,195,4.8
+P1021,Product_22,Thể thao,Brand_A,S117,432.0,1053,130,4.7
+P1022,Product_23,Phụ kiện,Brand_B,S109,237.0,296,122,4.5
+P1023,Product_24,phụ kiện,Generic,S119,75.0,681,23,4.3
+P1024,Product_25,Mỹ phẩm,,S104,370.0,913,126,4.3
+P1025,Product_26,Gia dụng,Brand_B,S130,298.0,1052,175,4.9
+P1026,Product_27,Mỹ phẩm,Generic,S124,503.0,2028,162,3.3
+P1027,Product_28,Điện thoại,Brand_D,S105,92.0,325,179,4.6
+P1028,Product_29,Laptop,Generic,S139,133.0,280,34,3.8
+P1029,Product_30,thời trang,Generic,S114,291.0,838,40,4.6
+P1030,Product_31,Điện thoại,Brand_D,S108,114.0,908,171,3.9
+P1031,Product_32,Gia dụng,Brand_C,S100,43.0,295,188,4.6
+P1032,Product_33,Laptop,Brand_A,S109,254.0,675,105,3.4
+P1033,Product_34,Gia dụng,Brand_D,S101,414.0,2895,176,3.4
+P1034,Product_35,Thể thao,Brand_C,S119,202.0,527,136,4.1
+P1035,Product_36,Thoi trang,Brand_D,S124,325.0,898,40,4.9
+P1036,Product_37,Laptop,Brand_A,S114,294.0,1373,101,4.5
+P1037,Product_38,Gia dụng,Generic,S135,223.0,2508,78,4.5
+P1038,Product_39,Phụ kiện,Generic,S138,244.0,578,157,4.6
+P1039,Product_40,Laptop,Brand_B,S112,569.0,1113,67,4.0
+P1040,Product_41,Phụ kiện,Brand_D,S125,113.0,295,35,4.5
+P1041,Product_42,Điện thoại,Generic,S116,380.0,501,99,3.9
+P1042,Product_43,Mỹ phẩm,Brand_D,S110,97.0,369,98,4.0
+P1043,Product_44,Gia dụng,Generic,S108,127.0,159,177,4.1
+P1044,Product_45,Phụ kiện,Brand_D,S120,511.0,639,1,3.9
+P1045,Product_46,Thời trang,Brand_B,S105,95.0,652,174,4.2
+P1046,Product_47,laptop,Brand_C,S126,187.0,660,42,4.1
+P1047,Product_48,Thời trang,Brand_C,S135,1156.0,1445,35,3.8
+P1048,Product_49,Thời trang,Brand_B,S114,454.0,1356,83,4.1
+P1049,Product_50,Mẹ & Bé,Generic,S122,132.0,239,110,4.3
+P1050,Product_51,Thời trang,Brand_D,S139,149.0,582,185,3.7
+P1051,Product_52,Laptop,Brand_C,S128,197.0,376,106,4.4
+P1052,Product_53,Thời trang,Brand_C,S116,555.0,694,29,4.0
+P1053,Product_54,Gia dụng,Brand_C,S135,110.0,884,90,4.3
+P1054,Product_55,Thể thao,Brand_C,S101,105.0,806,184,3.9
+P1055,Product_56,Phụ kiện,Brand_D,S123,365.0,781,142,4.7
+P1056,Product_57,Laptop,Brand_B,S110,68.0,718,43,4.7
+P1057,Product_58,Mỹ phẩm,Generic,S107,117.0,215,129,3.7
+P1058,Product_59,Mỹ phẩm,Generic,S120,209.0,1030,146,4.5
+P1059,Product_60,Thoi trang,Brand_D,S128,216.0,270,55,4.9
+P1060,Product_61,Mỹ phẩm,Brand_E,S129,85.0,460,105,3.7
+P1061,Product_62,Thời trang,Generic,S129,284.0,392,69,3.8
+P1062,Product_63,Thời trang,Brand_B,S111,326.0,619,36,4.6
+P1063,Product_64,Thời trang,Brand_B,S116,139.0,360,177,3.5
+P1064,Product_65,Thời trang,Brand_A,S104,708.0,885,64,3.8
+P1065,Product_66,Phụ kiện,Brand_C,S124,281.0,1411,65,3.7
+P1066,Product_67,Thời trang,Brand_B,S132,110.0,212,20,4.6
+P1067,Product_68,Phụ kiện,Brand_D,S119,689.0,861,88,3.9
+P1068,Product_69,Thời trang,Brand_C,S112,153.0,239,128,4.1
+P1069,Product_70,Mỹ phẩm,Brand_B,S113,251.0,764,194,3.8
+P1070,Product_71,Gia dụng,Brand_C,S126,157.0,307,155,4.8
+P1071,Product_72,Thời trang,Brand_A,S126,343.0,505,171,3.8
+P1072,Product_73,thời trang,Brand_D,S119,158.0,208,197,3.5
+P1073,Product_74,Gia dụng,Brand_B,S109,165.0,1141,139,3.5
+P1074,Product_75,Điện thoại,Brand_A,S116,198.0,517,171,4.5
+P1075,Product_76,Thời trang,Brand_A,S113,156.0,539,60,4.6
+P1076,Product_77,Điện thoại,Brand_E,S103,469.0,845,143,4.8
+P1077,Product_78,Thời trang,Brand_B,S116,92.0,218,125,3.6
+P1078,Product_79,Gia dụng,Brand_E,S133,216.0,330,90,4.1
+P1079,Product_80,Mỹ phẩm,Generic,S124,236.0,550,128,5.0
+P1080,Product_81,Mẹ & Bé,Brand_C,S105,203.0,254,144,4.0
+P1081,Product_82,Thể thao,Brand_A,S134,436.0,545,82,3.9
+P1082,Product_83,Mẹ & Bé,Brand_D,S108,77.0,289,168,4.2
+P1083,Product_84,Mẹ & Bé,Brand_A,S124,329.0,411,7,4.5
+P1084,Product_85,Điện thoại,Generic,S122,93.0,394,64,4.5
+P1085,Product_86,Gia dụng,Generic,S129,155.0,692,73,3.9
+P1086,Product_87,Gia dụng,Brand_C,S130,86.0,802,166,3.9
+P1087,Product_88,Điện thoại,Brand_B,S111,175.0,1597,101,4.1
+P1088,Product_89,Phụ kiện,Brand_E,S131,148.0,486,186,3.8
+P1089,Product_90,Thoi trang,Brand_D,S123,697.0,871,190,3.6
+P1090,Product_91,Mỹ phẩm,Brand_A,S113,262.0,485,91,5.0
+P1091,Product_92,Thể thao,Generic,S104,301.0,607,145,4.0
+P1092,Product_93,Phụ kiện,Brand_B,S122,102.0,638,49,4.0
+P1093,Product_94,Thời trang,Generic,S118,372.0,897,21,4.0
+P1094,Product_95,Laptop,Generic,S118,697.0,895,98,4.2
+P1095,Product_96,Mẹ & Bé,Brand_B,S127,407.0,691,60,4.4
+P1096,Product_97,Mỹ phẩm,Brand_B,S128,88.0,1315,146,4.0
+P1097,Product_98,Gia dụng,Brand_C,S107,160.0,501,104,4.8
+P1098,Product_99,Laptop,Generic,S111,239.0,331,27,4.5
+P1099,Product_100,Phụ kiện,Brand_A,S136,148.0,368,90,4.1
+P1100,Product_101,Phụ kiện,Brand_B,S123,1304.0,1630,80,3.9
+P1101,Product_102,Thời trang,Brand_E,S116,158.0,244,1,4.7
+P1102,Product_103,Mẹ & Bé,Brand_A,S138,215.0,331,108,4.1
+P1103,Product_104,Thoi trang,Brand_A,S126,145.0,235,187,3.6
+P1104,Product_105,Mẹ & Bé,Generic,S133,260.0,616,179,4.7
+P1105,Product_106,Mỹ phẩm,Brand_D,S118,583.0,729,180,3.8
+P1106,Product_107,Phụ kiện,Brand_D,S106,240.0,300,178,4.6
+P1107,Product_108,Thể thao,Brand_B,S129,190.0,322,184,2.9
+P1108,Product_109,Phụ kiện,Brand_D,S132,104.0,1614,19,4.0
+P1109,Product_110,Gia dụng,Brand_D,S123,516.0,742,85,4.8
+P1110,Product_111,Thể thao,Brand_C,S117,200.0,662,109,4.2
+P1111,Product_112,Thời trang,,S104,194.0,320,166,4.5
+P1112,Product_113,Điện thoại,Brand_A,S109,43.0,594,74,3.7
+P1113,Product_114,Mỹ phẩm,Brand_C,S136,203.0,488,141,4.4
+P1114,Product_115,Thời trang,Generic,S106,167.0,294,156,4.2
+P1115,Product_116,Thời trang,Brand_B,S126,62.0,357,102,4.3
+P1116,Product_117,Thời trang,Generic,S126,443.0,554,48,5.0
+P1117,Product_118,Điện thoại,Brand_C,S118,152.0,190,15,4.9
+P1118,Product_119,Laptop,Brand_A,S139,835.0,1044,88,4.6
+P1119,Product_120,Phụ kiện,Brand_A,S127,596.0,745,33,4.6
+P1120,Product_121,Gia dụng,Brand_B,S138,134.0,284,128,3.7
+P1121,Product_122,Mỹ phẩm,Generic,S110,577.0,721,47,4.0
+P1122,Product_123,Thời trang,Generic,S129,684.0,855,175,3.4
+P1123,Product_124,gia dụng,Brand_D,S130,150.0,830,179,3.6
+P1124,Product_125,gia dụng,Brand_A,S136,107.0,1905,167,3.8
+P1125,Product_126,Thời trang,Brand_C,S116,49.0,961,133,4.2
+P1126,Product_127,Thể thao,Brand_C,S113,289.0,1027,23,3.6
+P1127,Product_128,Mẹ & Bé,Brand_B,S132,112.0,740,196,4.2
+P1128,Product_129,Thời trang,Brand_A,S128,295.0,586,13,4.1
+P1129,Product_130,Thoi trang,Brand_C,S110,149.0,521,113,3.6
+P1130,Product_131,Mỹ phẩm,Brand_C,S112,128.0,272,160,5.0
+P1131,Product_132,Thoi trang,Brand_E,S131,149.0,772,16,3.5
+P1132,Product_133,Thời trang,Brand_C,S122,89.0,742,99,4.8
+P1133,Product_134,Thời trang,Brand_A,S136,149.0,365,95,3.1
+P1134,Product_135,mỹ phẩm,Brand_A,S125,132.0,694,39,4.1
+P1135,Product_136,Gia dụng,Brand_E,S139,219.0,314,22,3.6
+P1136,Product_137,Thể thao,Brand_E,S113,238.0,327,181,3.9
+P1137,Product_138,Thời trang,Brand_A,S131,105.0,816,180,5.0
+P1138,Product_139,Gia dụng,Generic,S107,478.0,652,18,4.0
+P1139,Product_140,Mẹ & Bé,Brand_E,S128,198.0,424,55,3.6
+P1140,Product_141,Gia dụng,Brand_A,S116,634.0,792,78,4.4
+P1141,Product_142,Điện thoại,Brand_B,S120,262.0,552,39,4.0
+P1142,Product_143,Laptop,Generic,S132,232.0,290,13,4.3
+P1143,Product_144,Phụ kiện,Brand_C,S104,157.0,301,102,3.7
+P1144,Product_145,Thời trang,Brand_B,S108,340.0,425,88,3.8
+P1145,Product_146,Thời trang,Brand_D,S122,227.0,497,161,3.8
+P1146,Product_147,Điện thoại,Brand_B,S116,404.0,1000,59,4.6
+P1147,Product_148,Laptop,Generic,S122,681.0,851,102,4.1
+P1148,Product_149,Thời trang,Generic,S117,133.0,353,62,3.7
+P1149,Product_150,Thời trang,Generic,S102,340.0,425,7,4.3
+P1150,Product_151,Gia dụng,Brand_D,S137,333.0,416,145,4.2
+P1151,Product_152,Thoi trang,Brand_E,S127,305.0,1808,148,4.5
+P1152,Product_153,Phụ kiện,Brand_B,S124,163.0,515,132,4.0
+P1153,Product_154,Mỹ phẩm,,S105,166.0,561,6,4.2
+P1154,Product_155,Mỹ phẩm,Brand_A,S107,147.0,184,139,4.4
+P1155,Product_156,Thời trang,Brand_B,S123,145.0,229,120,3.7
+P1156,Product_157,Laptop,Generic,S102,123.0,479,88,4.6
+P1157,Product_158,Mỹ phẩm,Generic,S118,206.0,356,123,4.2
+P1158,Product_159,Laptop,Brand_D,S135,130.0,537,22,3.6
+P1159,Product_160,Phụ kiện,Brand_C,S135,300.0,533,41,3.6
+P1160,Product_161,Thời trang,Brand_A,S120,230.0,728,25,4.2
+P1161,Product_162,Mỹ phẩm,Brand_E,S109,249.0,311,89,3.9
+P1162,Product_163,Thể thao,Brand_A,S102,183.0,240,179,4.6
+P1163,Product_164,Gia dụng,Brand_B,S106,232.0,462,1,4.1
+P1164,Product_165,Thoi trang,Brand_C,S111,186.0,323,89,4.4
+P1165,Product_166,Thể thao,Generic,S122,382.0,478,56,3.8
+P1166,Product_167,Gia dụng,Generic,S129,162.0,529,187,4.2
+P1167,Product_168,Thời trang,Generic,S118,288.0,360,123,4.9
+P1168,Product_169,Gia dụng,Generic,S133,89.0,558,44,4.1
+P1169,Product_170,Thời trang,Brand_B,S106,364.0,702,56,3.9
+P1170,Product_171,Thời trang,Brand_A,S116,150.0,514,116,3.8
+P1171,Product_172,Phụ kiện,Brand_C,S124,117.0,787,9,4.2
+P1172,Product_173,Phụ kiện,Brand_B,S102,100.0,125,13,4.9
+P1173,Product_174,Thời trang,Brand_E,S136,94.0,337,134,3.5
+P1174,Product_175,Phụ kiện,Brand_C,S139,158.0,880,160,4.2
+P1175,Product_176,Phụ kiện,Generic,S129,632.0,790,148,3.3
+P1176,Product_177,Điện thoại,Brand_C,S128,141.0,257,34,4.0
+P1177,Product_178,Mỹ phẩm,Brand_C,S108,47.0,454,172,4.3
+P1178,Product_179,Điện thoại,Generic,S107,286.0,487,44,3.4
+P1179,Product_180,Gia dụng,Brand_D,S109,101.0,348,175,4.0
+P1180,Product_181,Phụ kiện,Brand_B,S105,392.0,1633,59,4.3
+P1181,Product_182,Phụ kiện,Brand_E,S122,165.0,594,99,4.3
+P1182,Product_183,Thể thao,Brand_D,S138,183.0,274,191,4.4
+P1183,Product_184,Thời trang,Brand_A,S127,512.0,640,81,3.7
+P1184,Product_185,Điện thoại,Brand_C,S135,341.0,641,133,4.3
+P1185,Product_186,Laptop,Generic,S139,93.0,270,117,3.9
+P1186,Product_187,Gia dụng,Brand_B,S126,103.0,1997,14,4.6
+P1187,Product_188,Gia dụng,Brand_C,S104,64.0,651,158,3.0
+P1188,Product_189,Thời trang,Brand_B,S137,1370.0,1712,71,4.1
+P1189,Product_190,Mỹ phẩm,Brand_D,S121,121.0,579,95,4.2
+P1190,Product_191,Laptop,Generic,S121,502.0,1021,60,4.9
+P1191,Product_192,Laptop,Brand_B,S139,153.0,191,199,4.2
+P1192,Product_193,Laptop,Generic,S127,104.0,225,110,4.3
+P1193,Product_194,Phụ kiện,Generic,S104,225.0,965,127,4.4
+P1194,Product_195,Gia dụng,Brand_B,S130,176.0,1307,104,4.8
+P1195,Product_196,Laptop,Generic,S138,388.0,485,61,4.0
+P1196,Product_197,Thời trang,Generic,S109,392.0,490,117,3.5
+P1197,Product_198,Gia dụng,Generic,S118,146.0,549,158,3.4
+P1198,Product_199,Gia dụng,Brand_D,S104,81.0,676,19,4.5
+P1199,Product_200,Phụ kiện,Brand_A,S128,96.0,542,30,4.3
+P1200,Product_201,Gia dụng,Brand_A,S105,45.0,474,32,4.1
+P1201,Product_202,Laptop,Brand_B,S117,183.0,229,187,3.9
+P1202,Product_203,Gia dụng,Brand_D,S126,220.0,386,115,4.3
+P1203,Product_204,Điện thoại,Brand_C,S133,99.0,425,68,4.3
+P1204,Product_205,Thể thao,Brand_E,S112,91.0,345,39,4.4
+P1205,Product_206,Mỹ phẩm,Generic,S136,219.0,274,137,3.6
+P1206,Product_207,Thời trang,Brand_B,S100,142.0,721,104,3.3
+P1207,Product_208,Thời trang,Generic,S106,191.0,865,125,3.7
+P1208,Product_209,Gia dụng,Brand_A,S104,171.0,294,143,3.5
+P1209,Product_210,Thời trang,Brand_B,S129,264.0,437,19,3.5
+P1210,Product_211,Gia dụng,Generic,S114,149.0,357,135,5.0
+P1211,Product_212,Phụ kiện,Brand_B,S100,157.0,359,144,3.1
+P1212,Product_213,Phụ kiện,Brand_B,S131,59.0,679,55,4.4
+P1213,Product_214,gia dụng,Generic,S111,214.0,690,62,4.7
+P1214,Product_215,Phụ kiện,Generic,S127,236.0,991,118,4.7
+P1215,Product_216,Điện thoại,Generic,S122,196.0,978,76,4.3
+P1216,Product_217,Laptop,Brand_A,S104,844.0,1055,186,4.9
+P1217,Product_218,Điện thoại,Brand_B,S124,248.0,3126,19,5.0
+P1218,Product_219,Gia dụng,Brand_B,S134,198.0,1349,33,4.0
+P1219,Product_220,Gia dụng,Brand_B,S114,314.0,392,162,4.4
+P1220,Product_221,Thể thao,Generic,S133,972.0,1215,136,4.8
+P1221,Product_222,Gia dụng,Brand_A,S110,264.0,330,172,3.8
+P1222,Product_223,Gia dụng,Brand_E,S111,47.0,502,4,4.1
+P1223,Product_224,Điện thoại,Brand_A,S106,300.0,1462,26,3.9
+P1224,Product_225,Điện thoại,Brand_D,S108,120.0,3004,167,4.4
+P1225,Product_226,Laptop,Brand_A,S109,58.0,455,162,3.3
+P1226,Product_227,Laptop,Brand_A,S125,727.0,909,165,4.9
+P1227,Product_228,Gia dụng,Brand_B,S105,625.0,781,179,4.5
+P1228,Product_229,Laptop,Generic,S121,117.0,1784,46,4.5
+P1229,Product_230,Laptop,Brand_D,S110,118.0,260,19,3.0
+P1230,Product_231,Mỹ phẩm,Brand_E,S105,248.0,2769,59,3.7
+P1231,Product_232,Mẹ & Bé,Brand_B,S132,119.0,401,199,4.9
+P1232,Product_233,Điện thoại,Brand_E,S121,201.0,251,103,4.1
+P1233,Product_234,Phụ kiện,Brand_E,S111,134.0,401,0,3.3
+P1234,Product_235,Mỹ phẩm,Brand_C,S125,167.0,291,148,4.3
+P1235,Product_236,Mỹ phẩm,,S136,83.0,647,168,4.5
+P1236,Product_237,Mỹ phẩm,Generic,S111,395.0,494,24,4.5
+P1237,Product_238,Thời trang,Generic,S109,514.0,642,111,4.1
+P1238,Product_239,Mẹ & Bé,,S127,206.0,759,148,4.8
+P1239,Product_240,Laptop,,S119,216.0,1292,191,3.8
+P1240,Product_241,Thời trang,Brand_A,S126,344.0,767,121,4.5
+P1241,Product_242,Mỹ phẩm,Brand_B,S106,222.0,1241,67,4.3
+P1242,Product_243,thể thao,Brand_B,S137,743.0,929,182,4.1
+P1243,Product_244,Thời trang,Brand_B,S100,88.0,637,72,4.0
+P1244,Product_245,Thoi trang,Brand_C,S110,405.0,506,126,4.0
+P1245,Product_246,Mỹ phẩm,Brand_E,S125,204.0,458,168,4.2
+P1246,Product_247,Mỹ phẩm,Brand_D,S120,101.0,634,106,4.1
+P1247,Product_248,Phụ kiện,Brand_D,S113,1067.0,1334,142,4.6
+P1248,Product_249,Phụ kiện,Generic,S139,1176.0,1470,168,3.9
+P1249,Product_250,Thời trang,Brand_A,S113,191.0,382,120,5.0
+P1250,Product_251,Phụ kiện,Brand_A,S127,302.0,419,84,3.9
+P1251,Product_252,Điện thoại,Brand_E,S116,159.0,373,128,4.7
+P1252,Product_253,Mẹ & Bé,Brand_D,S117,178.0,789,80,4.7
+P1253,Product_254,Phụ kiện,Brand_C,S131,100.0,428,136,4.3
+P1254,Product_255,Mỹ phẩm,Generic,S114,90.0,526,16,4.2
+P1255,Product_256,Điện thoại,Brand_A,S115,805.0,1006,9,3.8
+P1256,Product_257,Thoi trang,Brand_D,S131,215.0,985,94,3.9
+P1257,Product_258,gia dụng,Generic,S103,229.0,1033,23,4.3
+P1258,Product_259,Gia dụng,Brand_C,S117,126.0,403,146,4.2
+P1259,Product_260,Mỹ phẩm,Brand_D,S111,253.0,3143,36,4.8
+P1260,Product_261,Thể thao,Brand_A,S119,77.0,299,99,4.0
+P1261,Product_262,Mỹ phẩm,Brand_B,S123,129.0,948,35,4.0
+P1262,Product_263,thời trang,Brand_A,S117,96.0,266,184,3.4
+P1263,Product_264,mẹ & bé,Brand_D,S139,547.0,814,168,4.5
+P1264,Product_265,Thể thao,Brand_D,S136,70.0,774,0,4.5
+P1265,Product_266,Mỹ phẩm,Generic,S105,97.0,255,78,4.7
+P1266,Product_267,Thời trang,Brand_D,S125,53.0,453,188,4.7
+P1267,Product_268,Mỹ phẩm,Brand_A,S112,119.0,1659,97,4.6
+P1268,Product_269,Thời trang,Generic,S128,161.0,290,168,4.6
+P1269,Product_270,Laptop,Brand_B,S119,439.0,640,17,4.5
+P1270,Product_271,Mỹ phẩm,Brand_E,S138,190.0,613,85,4.6
+P1271,Product_272,Mỹ phẩm,Brand_B,S137,166.0,479,174,3.3
+P1272,Product_273,Gia dụng,Generic,S102,273.0,341,38,3.7
+P1273,Product_274,Mẹ & Bé,Generic,S104,162.0,844,2,3.6
+P1274,Product_275,Thể thao,Brand_A,S100,1196.0,1495,146,4.8
+P1275,Product_276,Mỹ phẩm,Brand_D,S131,146.0,1010,16,3.8
+P1276,Product_277,Điện thoại,Brand_D,S109,296.0,573,60,3.9
+P1277,Product_278,Điện thoại,Brand_B,S128,395.0,514,162,4.2
+P1278,Product_279,Mỹ phẩm,Brand_B,S113,143.0,628,178,3.6
+P1279,Product_280,Phụ kiện,,S112,249.0,311,26,4.4
+P1280,Product_281,Thời trang,Brand_B,S124,156.0,1357,99,3.1
+P1281,Product_282,Điện thoại,,S130,268.0,386,158,3.6
+P1282,Product_283,Laptop,Generic,S122,238.0,389,78,4.3
+P1283,Product_284,Laptop,Brand_D,S122,201.0,1141,70,3.6
+P1284,Product_285,Mỹ phẩm,Brand_B,S129,99.0,579,108,4.8
+P1285,Product_286,Thời trang,,S106,816.0,1020,155,4.2
+P1286,Product_287,Điện thoại,Generic,S123,334.0,645,8,4.8
+P1287,Product_288,Thời trang,Generic,S111,73.0,740,10,4.4
+P1288,Product_289,Thể thao,Brand_D,S106,165.0,456,21,4.2
+P1289,Product_290,Thời trang,Brand_B,S113,74.0,897,68,3.7
+P1290,Product_291,Laptop,,S107,377.0,471,55,4.7
+P1291,Product_292,Thời trang,Generic,S112,218.0,584,96,4.4
+P1292,Product_293,Mẹ & Bé,Generic,S100,222.0,829,60,5.0
+P1293,Product_294,Điện thoại,Brand_E,S129,123.0,738,125,4.6
+P1294,Product_295,Laptop,Brand_D,S113,178.0,222,64,4.0
+P1295,Product_296,thời trang,Brand_C,S126,384.0,480,167,4.3
+P1296,Product_297,Gia dụng,Brand_E,S129,464.0,580,61,4.4
+P1297,Product_298,Thể thao,Brand_A,S132,400.0,1137,48,4.8
+P1298,Product_299,phụ kiện,Brand_D,S103,75.0,382,172,4.9
+P1299,Product_300,Laptop,Brand_E,S120,194.0,1057,131,4.1
